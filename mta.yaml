@@ -1,0 +1,33 @@
+## Generated mta.yaml based on template version 0.4.0
+## appName = mho_cap_sandpit
+## language=nodejs; multiTenant=false
+## approuter=
+_schema-version: '3.1'
+ID: mho_cap_sandpit
+version: 1.0.3
+description: "mho CAP sandpit"
+parameters:
+  enable-parallel-deployments: true
+   
+build-parameters:
+  before-all:
+   - builder: custom
+     commands:
+      - npm install --production
+      - npx -p @sap/cds-dk cds build --production
+
+modules:
+ # --------------------- SERVER MODULE ------------------------
+ - name: mho_cap_sandpit-srv
+ # ------------------------------------------------------------
+   type: nodejs
+   path: gen/srv
+   provides:
+    - name: srv-api      # required by consumers of CAP services (e.g. approuter)
+      properties:
+        srv-url: ${default-url}
+
+
+
+
+
