@@ -26,7 +26,6 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 
 
 
-1. In your BTP subaccount, click **Destinations >> Download Trust**.  A file will be downloaded to your downloads folder.  This file is required when creating the communication system in S/4HANA Cloud.
 <img src="2.png"/>
 2. Log into your S/4HANA Cloud system and access **Maintain Communication Users**.
 <img src="14.png"/>
